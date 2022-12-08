@@ -6,10 +6,12 @@
         <Company>Kenny Pflug</Company>
         <Copyright>Copyright © Kenny Pflug 2022</Copyright>
         <Description>Provides useful extensions for xunit.net test projects.</Description>
+        <PackageTags>xunit;unit;automated;testing;testsettings;configuration;test;order</PackageTags>
         <Version>1.0.0</Version>
         <Nullable>enable</Nullable>
         <LangVersion>11.0</LangVersion>
         <IsPackable>true</IsPackable>
+        <PackageIcon>light-logo.png</PackageIcon>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <TreatWarningsAsErrors Condition="'$(Configuration)' == 'Release'">true</TreatWarningsAsErrors>
         <PackageProjectUrl>https://github.com/feO2x/Light.Xunit</PackageProjectUrl>
@@ -20,6 +22,16 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReleaseNotes>
+Light.Xunit
+--------------------------------
+
+- initial release 🥳🍻🎈
+- use the TestConfiguration to configure your automated tests based on Microsoft.Extensions.Configuration
+- use ShouldBeWrittenTo to easily log exceptions and strings
+- use TestOrderer to easily run tests in a class in a specific order
+- read all docs at https://github.com/feO2x/Light.Xunit
+        </PackageReleaseNotes>
     </PropertyGroup>
     
     <ItemGroup>
@@ -31,6 +43,14 @@
         <PackageReference Include="IsExternalInit" Version="1.0.3" PrivateAssets="all" />
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="all" />
         <PackageReference Include="Xunit.SkippableFact" Version="1.4.13" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="../../light-logo.png" Pack="true" PackagePath="\" />
+        <None Include="Light.Xunit.props">
+            <Pack>true</Pack>
+            <PackagePath>build\</PackagePath>
+        </None>
     </ItemGroup>
 
 </Project>
