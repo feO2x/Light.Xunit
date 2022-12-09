@@ -22,6 +22,7 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>readme.md</PackageReadmeFile>
         <PackageReleaseNotes>
 Light.Xunit
 --------------------------------
@@ -47,10 +48,8 @@ Light.Xunit
 
     <ItemGroup>
         <None Include="../../light-logo.png" Pack="true" PackagePath="\" />
-        <None Include="Light.Xunit.props">
-            <Pack>true</Pack>
-            <PackagePath>build\</PackagePath>
-        </None>
+        <None Include="Light.Xunit.props" Pack="true" PackagePath="build\" />
+        <None Include="../../readme.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
 </Project>
