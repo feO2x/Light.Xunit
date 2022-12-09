@@ -25,9 +25,7 @@ public sealed class WriteStringToOutputTests
     {
         var act = () => "Foo".ShouldBeWrittenTo(null!);
 
-        act.Should()
-           .Throw<ArgumentNullException>()
-           .And.ParamName.Should()
-           .Be("output");
+        act.Should().Throw<ArgumentNullException>()
+           .And.ParamName.Should().Be("output");
     }
 }
