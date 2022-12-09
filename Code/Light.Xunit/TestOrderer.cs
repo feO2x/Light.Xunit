@@ -66,9 +66,10 @@ public sealed class TestOrderer : ITestCaseOrderer
         for (var i = 0; i < list.Count; i++)
         {
             var testCase = list[i];
-            if (testCase.SourceInformation == null || testCase.SourceInformation.LineNumber == null)
+            if (testCase.SourceInformation?.LineNumber == null)
                 return false;
         }
+        
         return true;
     }
 

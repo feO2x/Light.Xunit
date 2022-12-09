@@ -26,10 +26,8 @@ public sealed class TestOrderDiscoverer : TraitDiscoverer
     /// </summary>
     public override IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo traitAttribute)
     {
-        if (traitAttribute is not ReflectionAttributeInfo { Attribute: TestOrderAttribute testOrderAttribute })
-            return base.GetTraits(traitAttribute);
-
-        var orderAsText = ConvertOrderNumberToString(testOrderAttribute.Order);
+        var order = traitAttribute.GetNamedArgument<int>(nameof(TestOrderAttribute.Order));
+        var orderAsText = ConvertOrderNumberToString(order);
         return new[] { new KeyValuePair<string, string>(TestOrderAttribute.TraitName, orderAsText) };
     }
 

@@ -1,8 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
+    
+    <Import Project="Light.Xunit.Tests.Local.props" Condition="Exists('Light.Xunit.Tests.Local.props')" />
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework Condition="'$(TargetFramework)' == '' AND '$(TargetFrameworks)' == ''">net7.0</TargetFramework>
         <Nullable>enable</Nullable>
+        <LangVersion>11.0</LangVersion>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
 
