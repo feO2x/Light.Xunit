@@ -1,0 +1,1 @@
+dotnet pack ./Light.Xunit.csproj --configuration Release /p:ContinuousIntegrationBuild=true
